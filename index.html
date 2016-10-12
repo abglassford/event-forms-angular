@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="exercisesApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercises</title>
+  </head>
+  <body>
+    <header>
+      <h1>Exercises</h1>
+    </header>
+    <main>
+      <div ng-controller="reverseController as reverse">
+        <input type="text" name="name" ng-model="input">
+        <button type="button" ng-click="reverse.reverseString(input)">Reverse!</button>
+        <p>Your word is: {{reverse.reversedString}}</p>
+      </div>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers.js"></script>
+  </body>
+</html>
