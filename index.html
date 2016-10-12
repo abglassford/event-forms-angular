@@ -3,19 +3,46 @@
   <head>
     <meta charset="utf-8">
     <title>Exercises</title>
+    <link rel="stylesheet" href="./style.css" media="screen" title="no title">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
   </head>
   <body>
-    <header>
-      <h1>Exercises</h1>
-    </header>
+
     <main>
-      <div ng-controller="reverseController as reverse">
-        <input type="text" name="name" ng-model="input">
-        <button type="button" ng-click="reverse.reverseString(input)">Reverse!</button>
-        <p>Your word is: {{reverse.reversedString}}</p>
+      <div class="container">
+        <h1>Exercises</h1>
+        <div class="row col m8 offset-m2">
+          <div class="col m4 offset-m4" ng-controller="reverseController as reverse">
+            <input type="text" name="name" ng-model="reverse.input">
+            <button type="button" ng-click="reverse.reverseString(reverse.input)">Reverse!</button>
+            <p>Your word is: {{reverse.input}}</p>
+          </div>
+        </div>
+
+        <div ng-controller="pingPongController as pingPong" class="row col m8 offset-m2">
+          <div class="player1 col m4 offset-m2" ng-click="pingPong.addPoint(pingPong.player1)"ng-model="player1">
+            <p>{{pingPong.player1.score}}</p>
+          </div>
+          <div class="player2 col m4" ng-model="player2" ng-click="pingPong.addPoint(pingPong.player2)">
+            <p>{{pingPong.player2.score}}</p>
+          </div>
+          <div class="col m12">
+            <button class="resetButton" type="button" name="button">Reset</button>
+          </div>
+
+        </div>
+
       </div>
+
+
+
+
+
+
     </main>
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
     <script src="app.js"></script>
     <script src="controllers.js"></script>
   </body>

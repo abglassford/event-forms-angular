@@ -1,0 +1,19 @@
+.player1 {
+  background-color: blue;
+  height: 200px;
+  width: auto;
+  font-size: 60px;
+  text-align: center;
+}
+
+.player2 {
+  background-color: orange;
+  height: 200px;
+  width: auto;
+  font-size: 60px;
+  text-align: center;
+}
+
+.resetButton {
+  margin: 0 50%;
+}
