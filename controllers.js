@@ -83,15 +83,21 @@
       this.view = {};
       this.view.number = 5;
       this.view.enterCount = 0;
-
+      this.colors = []
       this.randomColor = function () {
         var x = Math.round(0xffffff * Math.random()).toString(16);
         var y = (6-x.length);
         var z = "000000";
         var z1 = z.substring(0,y);
         var color = "#" + z1 + x;
+        this.colors.push(color)
         return color;
       }
+
+      this.saveColor = function () {
+
+      }
+
 
       var replaying = false;
 
