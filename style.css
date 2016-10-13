@@ -1,19 +1,29 @@
-.player1 {
+.player1, .player2 {
   background-color: blue;
   height: 200px;
   width: auto;
   font-size: 60px;
   text-align: center;
+  color: white;
+  margin: 2px
 }
-
-.player2 {
-  background-color: orange;
-  height: 200px;
-  width: auto;
-  font-size: 60px;
-  text-align: center;
-}
-
 .resetButton {
   margin: 0 50%;
+}
+.winner {
+  background-color: limegreen;
+}
+.loser {
+  background-color: red;
+}
+.serve {
+  color: red;
+  font-size: 20px;
+}
+.player1Stats {
+  color: red;
+}
+.stats {
+  font-size: 20px;
+  color: black;
 }

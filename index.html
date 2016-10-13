@@ -11,33 +11,40 @@
     <main>
       <div class="container">
         <h1>Exercises</h1>
+        <h5>Reverse Exercise</h5>
         <div class="row col m8 offset-m2">
-          <div class="col m4 offset-m4" ng-controller="reverseController as reverse">
+          <div ng-controller="reverseController as reverse" class="col m4 offset-m4">
             <input type="text" name="name" ng-model="reverse.input">
             <button type="button" ng-click="reverse.reverseString(reverse.input)">Reverse!</button>
             <p>Your word is: {{reverse.input}}</p>
           </div>
         </div>
 
+        <h5>Ping Pong Exercise</h5>
+
         <div ng-controller="pingPongController as pingPong" class="row col m8 offset-m2">
-          <div class="player1 col m4 offset-m2" ng-click="pingPong.addPoint(pingPong.player1)"ng-model="player1">
+          <div class="player1 col m4 offset-m2" ng-click="pingPong.play(pingPong.player1); pingPong.switchServe()" ng-model="player1" ng-class="{winner : pingPong.player1.winner, loser : pingPong.player1.loser}">
+
             <p>{{pingPong.player1.score}}</p>
+            <p class="serve"ng-show="pingPong.player1.serving === true">Serving</p>
+            <p class="stats">Wins: {{pingPong.player1.wins}} Losses: {{pingPong.player1.losses}}</p>
+
           </div>
-          <div class="player2 col m4" ng-model="player2" ng-click="pingPong.addPoint(pingPong.player2)">
+          <!-- ============ -->
+          <div class="player2 col m4" ng-click="pingPong.play(pingPong.player2)" ng-model="player2" ng-class="{winner : pingPong.player2.winner, loser : pingPong.player2.loser}">
+
             <p>{{pingPong.player2.score}}</p>
+            <p class="serve" ng-show="pingPong.player2.serving === true" >Serving</p>
+            <p class="stats">Wins: {{pingPong.player2.wins}} Losses: {{pingPong.player2.losses}}</p>
+
           </div>
           <div class="col m12">
-            <button class="resetButton" type="button" name="button">Reset</button>
+            <button ng-click="pingPong.reset()"class="resetButton" type="button" name="button">Reset</button>
           </div>
 
         </div>
 
       </div>
-
-
-
-
-
 
     </main>
     <script src="http://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
