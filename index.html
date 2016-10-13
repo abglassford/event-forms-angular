@@ -49,7 +49,7 @@
           <h3>The number is: {{ctrl.view.number}}</h3>
           <h5>The div was entered {{ ctrl.view.enterCount || 0 }} times</h5>
           <button ng-click="ctrl.pickRandomNumber()">Pick Random Number</button>
-          <div style="width: 200px; height: 200px; border: 1px solid #CCC;" class="divbox" ng-mouseenter="myStyle={'background-color': ctrl.randomColor()}" ng-style="myStyle"></div>
+          <div style="width: 200px; height: 200px; border: 1px solid #CCC;" class="divbox" ng-mouseenter="myStyle={'background-color': ctrl.randomColor()}" ng-style="myStyle" ng-click=""></div>
         </div>
 
 
