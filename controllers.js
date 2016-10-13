@@ -32,7 +32,7 @@
       losses: 0
     }
     this.game = {
-      point: 1
+      point: 0
     }
 
     this.play = function (player) {
@@ -69,7 +69,7 @@
       this.player2.serving = false
       this.player2.winner = false
       this.player2.loser = false
-      this.game.point = 1
+      this.game.point = 0
     }
   }
 
