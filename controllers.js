@@ -5,6 +5,7 @@
 
   app.controller('reverseController', reverseController)
   app.controller('pingPongController', pingPongController)
+  app.controller('MouseEnterController', MouseEnterController)
 
   function reverseController () {
     this.reverseString = function (input) {
@@ -14,7 +15,6 @@
   }
 
   function pingPongController () {
-
     this.player1 = {
       score: 0,
       serving: true,
@@ -34,11 +34,9 @@
     this.game = {
       point: 0
     }
-
     this.play = function (player) {
       const p1 = this.player1;
       const p2 = this.player2;
-
       if (p1.winner === false && p2.winner === false) {
         this.game.point++
         player.score++
@@ -59,7 +57,6 @@
         }
       }
     }
-
     this.reset = function () {
       this.player1.score = 0
       this.player1.serving = true
@@ -71,6 +68,33 @@
       this.player2.loser = false
       this.game.point = 0
     }
+  }
+
+  function MouseEnterController () {
+      this.pickRandomNumber = function() {
+      this.view.number = Math.floor(Math.random() * 10) + 1;
+    };
+      this.view = {};
+      this.view.number = 5;
+      this.view.enterCount = 0;
+
+      this.randomColor = function () {
+        var x = Math.round(0xffffff * Math.random()).toString(16);
+        var y = (6-x.length);
+        var z = "000000";
+        var z1 = z.substring(0,y);
+        var color = "#" + z1 + x;
+        return color;
+      }
+  }
+
+  function randomColor() {
+    var x = Math.round(0xffffff * Math.random()).toString(16);
+    var y = (6-x.length);
+    var z = "000000";
+    var z1 = z.substring(0,y);
+    var color = "#" + z1 + x;
+    return color;
   }
 
 }());
