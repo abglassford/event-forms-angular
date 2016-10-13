@@ -32,8 +32,7 @@
       losses: 0
     }
     this.game = {
-      point: 1,
-      playing: true
+      point: 1
     }
 
     this.play = function (player) {
@@ -52,13 +51,11 @@
           p2.loser = true
           p1.wins++
           p2.losses++
-          this.game.playing = false
         } else if (p2.score >= 11 && p1.score < p2.score - 1) {
           p2.winner = true
           p1.loser = true
           p2.wins++
           p1.losses++
-          this.game.playing = false
         }
       }
     }
